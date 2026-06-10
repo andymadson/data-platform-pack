@@ -15,7 +15,7 @@ It also contains `demo-project/`, a runnable orders ELT pipeline (SQLite, Python
 
 ## First run in under 5 minutes
 
-Prerequisites: [Claude Code](https://code.claude.com/docs) installed and authenticated, Node 18+ (Claude Code already requires it), Python 3, git. Commands below are shown for macOS, Linux, and WSL. On Windows, run the demo inside WSL or Git Bash (the hook commands use shell variable substitution); the harness and `try.js` also run fine in PowerShell with `python` in place of `python3`.
+Prerequisites: [Claude Code](https://code.claude.com/docs) installed and authenticated, Node 18+ (Claude Code already requires it), Python 3, git. Commands below are shown for macOS, Linux, and WSL. On Windows, run the demo inside WSL or Git Bash (the hook commands use shell variable substitution); the harness and `try.js` also run fine in PowerShell, and the pipeline runs there with `python` in place of `python3`.
 
 ```bash
 git clone https://github.com/andymadson/data-platform-pack && cd data-platform-pack

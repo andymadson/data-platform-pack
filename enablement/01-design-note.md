@@ -4,7 +4,7 @@
 
 ## Learning objectives
 
-After 30 minutes, an Applied AI engineer can:
+After 30 minutes with this kit, an Applied AI engineer can:
 
 1. Draw plugin anatomy from memory: a marketplace catalog pointing at plugins, each plugin a manifest plus skills, agents, and hooks, distributed through git and pinned by version.
 2. Run the 4-beat demo solo from a fresh clone (install, use, govern, ship) in under 12 minutes.
@@ -15,7 +15,7 @@ After 30 minutes, an Applied AI engineer can:
 
 **Made the cut:** one plugin with four component types (two skills, one agent, two hooks), one marketplace, a runnable data pipeline shaped like a real customer repo, a deterministic guardrail beat, and a 22-check offline test harness that costs zero tokens. The harness matters more than it looks: it's the seller's pre-call confidence check and the proof that hooks are just processes you can test in CI.
 
-**Cut, deliberately:** MCP and LSP servers in the plugin (auth variability is how live demos die; they get one sentence, not a beat), multi-plugin marketplaces and dependency constraints (day-two concerns), building a plugin from scratch live (scaffolding is boring to watch), and a heavy deck. A six-slide framing deck carries only the first eight minutes; the demo itself never leaves the terminal, and a one-page handout covers the rest.
+**Cut, deliberately:** MCP and LSP servers in the plugin (auth variability is how live demos die; they get one sentence, not a beat), multi-plugin marketplaces and dependency constraints (day-two concerns), building a plugin from scratch live (scaffolding is boring to watch), and a heavy deck. The deck carries only the first eight minutes of framing; the demo itself never leaves the terminal, and a one-page handout covers the rest.
 
 The demo domain is data engineering (an ELT pipeline with a prod target and immutable migrations) because that's where enterprise anxiety about agents is most concrete, and because SQLite plus the Python standard library means zero installs and nothing to break on stage.
 
@@ -25,4 +25,4 @@ Three reasons. First, it sells to two buyers at once: the engineer sees `/sql-re
 
 ## The signal it worked
 
-Within 14 days of the session, the seller runs this demo (or the ship-a-rule beat) in at least one real customer conversation, verified through call recordings or CRM notes. The in-session proxy that predicts it: every attendee authors one policy rule, sees the harness pass, and triggers the block themselves before leaving the room.
+Within 14 days of the session, the seller runs this demo (or the ship-a-rule beat) again in another live customer conversation, verified through call recordings or CRM notes. The in-session proxy that predicts it: every attendee authors one policy rule, sees the harness pass, and triggers the block themselves before leaving the room.

@@ -14,7 +14,7 @@ Recording notes: single take, terminal at full screen with a large font, the han
 
 **1:00 to 1:45 | Session arc (screen: facilitator guide, scroll slowly)**
 
-"Thirty minutes, four movements. Three minutes on the rollout problem, no screen, just the story every platform lead recognizes. Five minutes of anatomy on a one-page handout: marketplace, plugin, distribution. Twelve minutes of live demo in four beats. Then hands-on, where every attendee authors a policy rule and triggers the block themselves, and we close with field guidance: discovery questions and the three objections that always come up. Six framing slides carry the first eight minutes, then the demo never leaves the terminal, and for this audience the terminal is the more credible screen."
+"Thirty minutes, four movements. Three minutes on the rollout problem, no screen, just the story every platform lead recognizes. Five minutes of anatomy on a one-page handout: marketplace, plugin, distribution. Twelve minutes of live demo in four beats. Then hands-on, where every attendee authors a policy rule and triggers the block themselves, and we close with field guidance: discovery questions and the three objections that always come up. The framing deck carries the first eight minutes, then the demo never leaves the terminal, and for this audience the terminal is the more credible screen."
 
 **1:45 to 3:30 | Demo walkthrough (screen: terminal, run beats live)**
 

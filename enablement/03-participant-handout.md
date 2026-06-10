@@ -15,7 +15,7 @@ marketplace repo (platform team owns this)
     └── scripts/                         # anything the hooks run
 ```
 
-Diagram: enablement/assets/anatomy.svg (slide 3 of the deck).
+Diagram: enablement/assets/anatomy.svg (the anatomy slide of the deck).
 
 Only `plugin.json` lives in `.claude-plugin/`. Every component sits at the plugin root. Everything is namespaced by plugin name.
 

@@ -119,7 +119,7 @@ All four seeded findings surfaced. Result: pass in print mode. Interactive slash
 
 ## 5. Marketplace install and uninstall cycle
 
-Claude Code 2.1.170 ships non-interactive plugin subcommands, so this cycle is scriptable. The non-interactive command rejects a bare `..` as a source, while `../` works; the interactive `/plugin marketplace add ..` form documented in the README belongs to the rehearsal pass. The full sequence, including one install attempted out of order, ran as follows. The out-of-order install fails with a misleading message (it reports the plugin missing from a marketplace that wasn't registered at all), which is worth knowing if a demo step gets skipped.
+Claude Code 2.1.170 ships non-interactive plugin subcommands, so this cycle is scriptable. The non-interactive command rejects a bare `..` as a source, while `../` works; the interactive `/plugin marketplace add ../` form documented in the README belongs to the rehearsal pass. The full sequence, including one install attempted out of order, ran as follows. The out-of-order install fails with a misleading message (it reports the plugin missing from a marketplace that wasn't registered at all), which is worth knowing if a demo step gets skipped.
 
 ```
 $ claude plugin marketplace add ..
@@ -191,6 +191,6 @@ Result: pass, full cycle, clean exit.
 
 ## 7. Deferred to the human rehearsal
 
-- The interactive `/plugin` pass: marketplace add with bare `..`, browsing the component inventory, and install-flow timing.
+- The interactive `/plugin` pass: marketplace add with `../`, browsing the component inventory, and install-flow timing.
 - Slash-skill argument passing in an interactive session (print mode passed above).
 - Recording the Loom from `enablement/04-loom-script.md`.

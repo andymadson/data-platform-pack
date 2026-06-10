@@ -2,7 +2,7 @@
 
 All notable changes to the data-platform-pack plugin. Versions here match
 `plugins/data-platform-pack/.claude-plugin/plugin.json`, and a version bump is
-what ships an update to every installed engineer.
+what ships an update to every install.
 
 ## [Unreleased]
 

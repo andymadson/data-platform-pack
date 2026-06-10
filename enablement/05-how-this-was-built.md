@@ -14,7 +14,7 @@ Plugin schemas change faster than any model's training data. So nothing in this 
 
 1. Every schema claim (plugin.json fields, marketplace.json structure, hook decision contract, `${CLAUDE_PLUGIN_ROOT}` quoting) was fetched from code.claude.com during the build and cross-checked against Anthropic's own marketplace repos.
 2. Everything executable was executed. The 22-check harness passed, the pipeline ran end to end, and `try.js` was smoke-tested across allow, ask, and deny paths before any document claimed it worked.
-3. The one surface that can't be verified without credentials (a live, authenticated Claude Code session) is named explicitly in the kit, with the rehearsal as its control. Unverified claims get labeled, not asserted.
+3. The one surface that can't be verified without credentials (a live, authenticated Claude Code session) is named explicitly in the kit, with the rehearsal as its control. Unverified claims get labeled, not asserted. That gap closed on 2026-06-10 in a live authenticated session (see 06-validation-record.md); only the interactive items in its final section still ride on the rehearsal.
 
 ## Why this is the point
 
