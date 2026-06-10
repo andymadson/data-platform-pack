@@ -39,7 +39,7 @@ Installed plugins run from a cache copy pinned by version. Editing your checkout
 1. **Install.** Marketplace add, install, restart. Show the components arriving.
 2. **Use.** `/data-platform-pack:sql-review pipelines/sql/orders_daily.sql` catches 4 seeded findings against the team's written conventions.
 3. **Govern.** Ask Claude to drop a prod table. The hook denies it, every time, because it's a regex in a process gate, not a prompt. Show `.claude/audit/*.jsonl`: denials next to executions.
-4. **Ship.** Add the customer's rule to `policy.json`, harness-verify offline, bump to 1.0.1, narrate the fleet update. One PR governs every engineer's agent.
+4. **Ship.** Add your rule to `policy.json`, prove it offline with the harness, bump to 1.0.1, and watch the fleet update. One PR governs every engineer's agent.
 
 ## Hook decisions in one breath
 
