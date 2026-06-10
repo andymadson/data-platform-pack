@@ -6,11 +6,14 @@ on:
 jobs:
   verify:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18, 20]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: ${{ matrix.node-version }}
       - name: Offline harness (manifests, hooks, policy)
         run: node tests/run_tests.js
       - name: One-shot policy smoke (deny path exits 2)
