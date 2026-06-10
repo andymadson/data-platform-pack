@@ -1,0 +1,5 @@
+# Dev warehouse target. Safe for agents and humans.
+target: dev
+warehouse_path: warehouse/dev.db
+schema: analytics_dev
+owner: data-platform-team

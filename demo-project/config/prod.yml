@@ -1,0 +1,7 @@
+# Production warehouse target. Changes require human review.
+# The data-platform-pack plugin escalates edits to this file.
+target: prod
+warehouse_path: warehouse/prod.db
+schema: analytics
+owner: data-platform-team
+alerting: pagerduty
