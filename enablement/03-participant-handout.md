@@ -1,4 +1,4 @@
-# Claude Code Plugins: Field Cheat Sheet
+# Claude Code Plugins: Resource Sheet
 
 One package, versioned, installed in one command, governed by the platform team. That's a plugin.
 
@@ -45,13 +45,13 @@ Installed plugins run from a cache copy pinned by version. Editing your checkout
 
 PreToolUse hooks read the tool call as JSON on stdin and answer `allow`, `deny` (blocks, tells Claude why), or `ask` (routes to the human). Deny beats ask beats allow. Because hooks are processes, you test them in CI by piping JSON at them.
 
-## Discovery questions for the field
+## Three questions to take back to your team
 
 - Who owns developer tooling standards, and how do they ship a change to every engineer today?
 - What's your audit story when an AI agent touches this codebase?
-- What's the one command an agent should never run here? (Then ship it as a rule in beat 4.)
+- What's the one command an agent should never run here? (We ship that one live in beat 4.)
 
-## Objections, short form
+## The questions everyone asks
 
 - **"We'll just copy `.claude/` folders."** That's drift with extra steps. Plugins add versions, namespacing, distribution, and a review point.
 - **"The model could ignore it."** It can ignore instructions. It can't ignore a process gate. Read `guard.js`; it's 158 lines on purpose.

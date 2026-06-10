@@ -117,6 +117,6 @@ This repo doubles as the seller-facing enablement package. Everything a technica
 - `05-how-this-was-built.md` (how AI built the kit and how a human verified it)
 - `06-validation-record.md` (commands and real output from a live Claude Code session)
 - `deck/index.html` (six framing slides, Anthropic visual style; print to PDF from the browser)
-- `deck/training-deck.pptx` (12-slide training variant with facilitator notes; imports cleanly into Google Slides. The six framing slides stay the session deck.)
+- `deck/presentation-deck.pptx` (the 12-slide room deck with presenter notes; imports cleanly into Google Slides. The six framing slides above are the short-form variant.)
 
 Docs: [Plugins](https://code.claude.com/docs/en/plugins), [Plugin marketplaces](https://code.claude.com/docs/en/plugin-marketplaces)

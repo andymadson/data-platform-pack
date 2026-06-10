@@ -1,6 +1,7 @@
 # Facilitator Guide: Plugins, the Enterprise Rollout Story (30 minutes)
 
-**Audience:** Applied AI Architects, Applied AI Engineers, Forward Deployed Engineers
+**Presenter:** an Applied AI Architect, Applied AI Engineer, or Forward Deployed Engineer
+**The room:** the prospect's platform lead and engineers; laptops invited for the hands-on block
 **Format:** Terminal-first. A six-slide framing deck for the opening eight minutes (enablement/deck/index.html), then the terminal. One printed or linked handout (`03-participant-handout.md`).
 **Room setup:** Facilitator laptop with the repo cloned, plugin NOT yet installed, `node tests/run_tests.js` already run once today. Attendees with laptops clone the repo before or during minute 8.
 **Send attendees the day before:** the repo link, "install and authenticate Claude Code before the session," and "confirm `node --version` prints 18 or higher." Anyone who shows up without Claude Code pairs with a neighbor during hands-on.
@@ -12,11 +13,11 @@
 
 Talk track:
 
-"Picture the account you're working. Your champion built genuinely good Claude Code workflows: a review command, a couple of agents, some guardrails in settings. Then you ask the platform lead about rollout and the energy leaves the room. Two hundred engineers means two hundred copies of a `.claude/` folder, zero versioning, no way to push a fix, and security has no idea what's running where. That's not a tooling complaint. That's the objection that stalls the deal.
+"Picture your team. One of your engineers built genuinely good Claude Code workflows: a review command, a couple of agents, some guardrails in settings. Then your platform lead asks about rollout and the energy leaves the room. Two hundred engineers means two hundred copies of a `.claude/` folder, zero versioning, no way to push a fix, and security has no idea what's running where. That's not a tooling complaint. That's what stalls adoption.
 
-Plugins are Claude Code's answer. A plugin bundles skills, agents, and hooks into one unit with a version on it. A marketplace is a git repo the platform team owns that catalogs plugins. Install is one command. Updates are one command. Policy travels inside the package. Today you'll run that whole motion, and by the end you'll have shipped a policy change to a fleet."
+Plugins are Claude Code's answer. A plugin bundles skills, agents, and hooks into one unit with a version on it. A marketplace is a git repo your platform team owns that catalogs plugins. Install is one command. Updates are one command. Policy travels inside the package. In the next thirty minutes you'll watch that whole motion run, and before we leave, someone in this room will have shipped a policy change to a fleet."
 
-Field note for the room: you'll teach subagents, hooks, and skills on other days. Plugins are where those pieces stop being a laptop setup and become something an enterprise can adopt.
+Field note for the presenter: don't detour into subagents, hooks, or skills as standalone features; plugins are where those pieces stop being a laptop setup and become something their enterprise can adopt.
 
 ## 3:00 to 8:00 | Anatomy (slides 2 and 3, plus the handout diagram, 5 minutes)
 
@@ -38,7 +39,7 @@ Prompts are verbatim in `PROMPTS.md`. Narrate decisions, not keystrokes.
 
 **Beat 3, Govern (13:00 to 17:00).** Ask Claude to drop the corrupted prod table and rebuild it. The guard denies the prod command with a rule id and reason, and Claude course-corrects to a dev proposal. (If Claude refuses outright without attempting the command, that's layer one working; run the prod-target probe from PROMPTS.md beat 3 to bring the gate itself on screen.) **Pause here.** This is where someone asks the question; see objections below. Then `cat .claude/audit/agent-audit-*.jsonl` and show `deny` lines next to `executed` lines. Line to land: "Attempts and outcomes in one file. That's the artifact your security review asks for." Optionally run the prod-config edit prompt to show `ask`: deny isn't the only verb, escalation to a human is policy too.
 
-**Beat 4, Ship (17:00 to 20:00).** Ask the room: "What's one command agents should never run in your accounts?" Take the first answer (terraform apply is the usual one), add the rule to `policy.json`, prove it with `node tests/try.js "terraform apply"` (instant deny, zero tokens), run the harness to show nothing regressed, bump the manifest to 1.0.1, and narrate the update motion (`/plugin marketplace update platform-tools`, plugin update, restart). Line to land: "One PR, one version bump, and every engineer's agent just got safer. That's the rollout motion your platform lead has been asking for."
+**Beat 4, Ship (17:00 to 20:00).** Ask the room: "What's one command an agent should never run here?" Take the first answer (terraform apply is the usual one), add the rule to `policy.json`, prove it with `node tests/try.js "terraform apply"` (instant deny, zero tokens), run the harness to show nothing regressed, bump the manifest to 1.0.1, and narrate the update motion (`/plugin marketplace update platform-tools`, plugin update, restart). Line to land: "One PR, one version bump, and every engineer's agent just got safer. That's the rollout motion your platform lead has been asking for."
 
 If anything drifts: the model improvising is fine (the guard catches patterns, not intentions), and the harness is your fallback. `node tests/try.js "<any command>"` shows the deny without burning a token. No network? The local marketplace add (`../`) doesn't need one. If the model itself is down, walk beats 1 and 2 from the handout anatomy and slide 4, and run beats 3 and 4 entirely through try.js and the harness.
 
