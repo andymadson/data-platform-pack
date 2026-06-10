@@ -14,13 +14,13 @@ Recording notes: single take, terminal at full screen with a large font, the han
 
 **1:00 to 1:45 | Session arc (screen: facilitator guide, scroll slowly)**
 
-"Thirty minutes, four movements. Three minutes on the rollout problem, no screen, just the story every platform lead recognizes. Five minutes of anatomy on a one-page handout: marketplace, plugin, distribution. Twelve minutes of live demo in four beats. Then hands-on, where every attendee authors a policy rule and triggers the block themselves, and we close with field guidance: discovery questions and the three objections that always come up. No slides anywhere. The terminal is the deck, and for this audience it's a more credible one."
+"Thirty minutes, four movements. Three minutes on the rollout problem, no screen, just the story every platform lead recognizes. Five minutes of anatomy on a one-page handout: marketplace, plugin, distribution. Twelve minutes of live demo in four beats. Then hands-on, where every attendee authors a policy rule and triggers the block themselves, and we close with field guidance: discovery questions and the three objections that always come up. Six framing slides carry the first eight minutes, then the demo never leaves the terminal, and for this audience the terminal is the more credible screen."
 
 **1:45 to 3:30 | Demo walkthrough (screen: terminal, run beats live)**
 
 "Beat one, install. Marketplace add, plugin install, ninety seconds from vanilla machine to standardized machine. I run this live because it's fast and it IS the product." (Run it.)
 
-"Beat two, use. The bundled sql-review skill on a pipeline with findings seeded on purpose: SELECT star, NULL keys leaking into a revenue rollup, returns counted as revenue. The findings cite the team's own rule numbers, which is the difference between AI taste and their standards." (Run it, let two findings render, move on. Don't wait for the full review; narrate over it.)
+"Beat two, use. The bundled sql-review skill on a pipeline with findings seeded on purpose: SELECT star, NULL keys leaking into a revenue rollup, returns counted as revenue, and no data quality check. The findings cite the team's own rule numbers, which is the difference between AI taste and their standards." (Run it, let two findings render, move on. Don't wait for the full review; narrate over it.)
 
 "Beat three, govern. I ask for the scariest thing I can think of." (Run the drop-prod prompt.) "Denied, with the rule id, and the agent course-corrects to dev. Then the audit file: denials sitting next to executions. This is the moment to pause in the room, because someone will say the model could ignore instructions, and the answer is on screen: this isn't an instruction, it's a process gate."
 
@@ -32,4 +32,4 @@ Recording notes: single take, terminal at full screen with a large font, the han
 
 **4:15 to 4:45 | Close (screen: terminal)**
 
-"Success signal: within two weeks the seller runs this, or just the ship-a-rule beat, in a real customer conversation. The in-session predictor is that every attendee personally shipped a rule and watched it block. The whole kit is in the repo: design note, facilitator guide, handout, demo, harness, prompts. Clone it, run the harness, and you're demo-ready in five minutes." (Uninstall and reinstall the plugin on camera, under a minute, and end on the install completing.) "Distribution is the product. Worth showing twice."
+"Success signal: within two weeks the seller runs this, or just the ship-a-rule beat, in a real customer conversation. The in-session predictor is that every attendee personally shipped a rule and watched it block. The whole kit is in the repo: design note, facilitator guide, handout, deck, demo, harness, prompts. Clone it, run the harness, and you're demo-ready in five minutes." (Uninstall and reinstall the plugin on camera, under a minute, and end on the install completing.) "Distribution is the product. Worth showing twice."

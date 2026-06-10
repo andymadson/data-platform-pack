@@ -3,5 +3,6 @@
 target: prod
 warehouse_path: warehouse/prod.db
 schema: analytics
+pool: 10
 owner: data-platform-team
 alerting: pagerduty

@@ -18,7 +18,7 @@ It also contains `demo-project/`, a runnable orders ELT pipeline (SQLite, Python
 Prerequisites: [Claude Code](https://code.claude.com/docs) installed and authenticated, Node 18+ (Claude Code already requires it), Python 3, git. Commands below are shown for macOS, Linux, and WSL. On Windows, run the demo inside WSL or Git Bash (the hook commands use shell variable substitution); the harness and `try.js` also run fine in PowerShell with `python` in place of `python3`.
 
 ```bash
-git clone https://github.com/andymadson/data-platform-pack && cd <repo>
+git clone https://github.com/andymadson/data-platform-pack && cd data-platform-pack
 
 # 1. Prove the guardrails work before spending a single token (about 5 seconds)
 node tests/run_tests.js
@@ -26,14 +26,14 @@ node tests/run_tests.js
 # 2. Prove the pipeline runs
 cd demo-project && python3 pipelines/run.py all --target dev
 
-# 3. Start Claude Code and install the plugin from the marketplace
+# 3. Still in demo-project/, start Claude Code and install the plugin
 claude
 ```
 
 Inside Claude Code:
 
 ```
-/plugin marketplace add ..
+/plugin marketplace add ../
 /plugin install data-platform-pack@platform-tools
 ```
 
@@ -52,7 +52,7 @@ That's the whole loop: one marketplace add, one install, and this machine now ha
 1. **Install.** Marketplace add, plugin install, show the namespaced components arriving.
 2. **Use.** `/data-platform-pack:sql-review` catches the seeded findings (`SELECT *`, NULL keys in a rollup, returns counted as revenue, no DQ check).
 3. **Govern.** Ask Claude to drop a prod table. The guard denies it deterministically, Claude course-corrects to dev, and `.claude/audit/*.jsonl` shows the denial next to every executed call.
-4. **Ship.** Add a policy rule the room suggests, bump the version to 1.0.1, `/plugin marketplace update`, and every engineer gets the new rule. That's the rollout motion.
+4. **Ship.** Add a policy rule the room suggests, bump the version to 1.0.1, `/plugin marketplace update platform-tools`, and every engineer gets the new rule. That's the rollout motion.
 
 ## How it works
 
@@ -115,7 +115,8 @@ This repo doubles as the seller-facing enablement package. Everything a technica
 - `03-participant-handout.md` (the one page that goes in front of the room)
 - `04-loom-script.md` (the sub-5-minute walkthrough script)
 - `05-how-this-was-built.md` (how AI built the kit and how a human verified it)
-- 06-validation-record.md (commands and real output from a live Claude Code session)
-- deck/index.html (six framing slides, Anthropic visual style; print to PDF from the browser)
+- `06-validation-record.md` (commands and real output from a live Claude Code session)
+- `deck/index.html` (six framing slides, Anthropic visual style; print to PDF from the browser)
+- `deck/training-deck.pptx` (12-slide training variant with facilitator notes; imports cleanly into Google Slides. The six framing slides stay the session deck.)
 
 Docs: [Plugins](https://code.claude.com/docs/en/plugins), [Plugin marketplaces](https://code.claude.com/docs/en/plugin-marketplaces)

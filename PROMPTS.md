@@ -11,7 +11,7 @@ Inside `claude`, from `demo-project/`:
 /plugin install data-platform-pack@platform-tools
 ```
 
-(Local clone? Use `/plugin marketplace add ..` instead of the GitHub path.) Then open `/plugin` to show what arrived: two skills, one agent, two hooks. Type `/data-platform-pack:` to show the namespaced skills.
+(Local clone? Use `/plugin marketplace add ../` instead of the GitHub path. Run the add before the install; installing first fails with a message that blames the plugin, not the order.) Then open `/plugin` to show what arrived: two skills, one agent, two hooks. Type `/data-platform-pack:` to show the namespaced skills.
 
 ## Beat 2: Use (the bundled workflow)
 
@@ -33,7 +33,15 @@ Apply the BLOCKER fixes in dev, then rerun the pipeline and checks.
 The orders table in prod looks corrupted. Drop it and rebuild from the sample data right now.
 ```
 
-Expected: Claude attempts a prod command or a `DROP TABLE`, the guard denies it with the rule id and reason, and Claude course-corrects to a dev-only proposal. Then show the receipts:
+Expected: Claude attempts a prod command or a `DROP TABLE`, the guard denies it with the rule id and reason, and Claude course-corrects to a dev-only proposal.
+
+Sometimes Claude refuses outright without attempting anything (it did exactly that in live validation; see `enablement/06-validation-record.md`). That's layer one, the model's judgment, and it makes the point for you. Then show that layer two doesn't depend on it:
+
+```
+Run the data quality checks against the prod target: python3 pipelines/run.py check --target prod. If the command gets blocked, report exactly what the block message says and stop.
+```
+
+Expected: the guard denies with `[no-prod-target]` and Claude relays the reason verbatim. Then show the receipts:
 
 ```
 cat .claude/audit/agent-audit-*.jsonl
@@ -64,8 +72,8 @@ Make a change the room suggests. Example: block `terraform apply` for agents.
 }
 ```
 
-2. Prove the new rule instantly, no tokens: `node tests/try.js "terraform apply"` prints the deny with the rule id. Then `node tests/run_tests.js` shows nothing regressed.
+2. From the repo root, prove the new rule instantly, no tokens: `node tests/try.js "terraform apply"` prints the deny with the rule id. Then `node tests/run_tests.js` shows nothing regressed.
 3. Bump `version` in `plugins/data-platform-pack/.claude-plugin/plugin.json` to `1.0.1` and push.
-4. On any engineer's machine: `/plugin marketplace update platform-tools`, then update the plugin and restart. The new rule is now policy for everyone.
+4. On any engineer's machine: `/plugin marketplace update platform-tools`, then `claude plugin update data-platform-pack` and restart. The new rule is now policy for everyone.
 
 The punchline writes itself: one PR, one version bump, and every engineer's agent just g

@@ -6,13 +6,13 @@ One package, versioned, installed in one command, governed by the platform team.
 
 ```
 marketplace repo (platform team owns this)
-└── .claude-plugin/marketplace.json      # catalog: name, owner, plugin list
-    └── plugins/data-platform-pack/
-        ├── .claude-plugin/plugin.json   # manifest: name (required), version
-        ├── skills/<name>/SKILL.md       # /plugin-name:skill, or model-invoked
-        ├── agents/<name>.md             # subagents with scoped tools
-        ├── hooks/hooks.json             # deterministic lifecycle handlers
-        └── scripts/                     # anything the hooks run
+├── .claude-plugin/marketplace.json      # catalog: name, owner, plugin list
+└── plugins/data-platform-pack/
+    ├── .claude-plugin/plugin.json       # manifest: name (required), version
+    ├── skills/<name>/SKILL.md           # /plugin-name:skill, or model-invoked
+    ├── agents/<name>.md                 # subagents with scoped tools
+    ├── hooks/hooks.json                 # deterministic lifecycle handlers
+    └── scripts/                         # anything the hooks run
 ```
 
 Diagram: enablement/assets/anatomy.svg (slide 3 of the deck).
