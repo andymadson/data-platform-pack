@@ -1,0 +1,17 @@
+{
+  "name": "platform-tools",
+  "description": "Internal Claude Code plugin marketplace for the data platform team. One repo, one review process, every engineer gets the same tooling.",
+  "owner": {
+    "name": "Data Platform Team",
+    "email": "data-platform@example.com"
+  },
+  "plugins": [
+    {
+      "name": "data-platform-pack",
+      "source": "./plugins/data-platform-pack",
+      "description": "Standard data engineering workflows: SQL review, warehouse conventions, prod guardrails, and an audit trail.",
+      "category": "data-engineering",
+      "keywords": ["sql", "pipelines", "governance", "review"]
+    }
+  ]
+}

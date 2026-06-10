@@ -1,0 +1,79 @@
+{
+  "version": "1.0.0",
+  "comment": "Deterministic guardrails enforced by scripts/guard.js on every PreToolUse event. Actions: deny (block, tell Claude why), ask (escalate to the human). Patterns are JavaScript regular expressions. Edit this file, bump the plugin version, and ship.",
+  "bash_rules": [
+    {
+      "id": "no-prod-target",
+      "action": "deny",
+      "pattern": "--target[=\\s]+prod\\b",
+      "reason": "Agents run against dev only. Prod deploys go through CI. Rerun with --target dev or hand this to a human."
+    },
+    {
+      "id": "no-destructive-sql",
+      "action": "deny",
+      "pattern": "\\b(drop\\s+(table|schema|database)|truncate\\s+table)\\b",
+      "flags": "i",
+      "reason": "Destructive SQL is blocked for agents. Propose the statement for human review instead."
+    },
+    {
+      "id": "no-recursive-force-delete",
+      "action": "deny",
+      "pattern": "\\brm\\s+-[a-z]*r[a-z]*f|\\brm\\s+-[a-z]*f[a-z]*r",
+      "flags": "i",
+      "reason": "Recursive force deletes are blocked. Delete specific files by name."
+    },
+    {
+      "id": "no-force-push",
+      "action": "deny",
+      "pattern": "git\\s+push[^\\n]*(--force\\b|\\s-f\\b)",
+      "reason": "Force pushes are blocked. Open a PR instead."
+    },
+    {
+      "id": "no-curl-pipe-shell",
+      "action": "deny",
+      "pattern": "(curl|wget)[^|\\n]*\\|\\s*(ba|z)?sh\\b",
+      "reason": "Piping downloads into a shell is blocked. Download, inspect, then run."
+    }
+  ],
+  "file_rules": [
+    {
+      "id": "migrations-immutable",
+      "action": "deny",
+      "paths": ["migrations/**"],
+      "reason": "Migrations are immutable once committed. Create a new numbered migration file instead."
+    },
+    {
+      "id": "prod-config-needs-human",
+      "action": "ask",
+      "paths": ["config/prod.yml", "config/prod.*", "infra/**"],
+      "reason": "Production config change. A human needs to approve this edit."
+    },
+    {
+      "id": "no-dotenv-edits",
+      "action": "deny",
+      "paths": [".env", ".env.*"],
+      "reason": "Environment files are off limits to agents."
+    }
+  ],
+  "content_rules": [
+    {
+      "id": "aws-access-key",
+      "action": "deny",
+      "pattern": "AKIA[0-9A-Z]{16}",
+      "reason": "That looks like an AWS access key. Secrets go in environment variables or a secrets manager, never in code."
+    },
+    {
+      "id": "private-key-block",
+      "action": "deny",
+      "pattern": "-----BEGIN [A-Z ]*PRIVATE KEY-----",
+      "reason": "Private key material is blocked from being written to the repository."
+    },
+    {
+      "id": "hardcoded-credential",
+      "action": "deny",
+      "pattern": "(password|secret|api[_-]?key|token)\\s*[:=]\\s*['\"][A-Za-z0-9+/_-]{12,}['\"]",
+      "flags": "i",
+      "reason": "That looks like a hardcoded credential. Use an environment variable."
+    }
+  ]
+}

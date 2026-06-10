@@ -1,0 +1,12 @@
+{
+  "name": "data-platform-pack",
+  "displayName": "Data Platform Pack",
+  "version": "1.0.0",
+  "description": "Standard data engineering workflows for Claude Code: SQL review, warehouse conventions, prod guardrails, and an audit trail.",
+  "author": {
+    "name": "Data Platform Team",
+    "email": "data-platform@example.com"
+  },
+  "license": "MIT",
+  "keywords": ["sql", "data-engineering", "governance", "audit"]
+}
