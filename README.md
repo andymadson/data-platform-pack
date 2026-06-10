@@ -1,5 +1,7 @@
 # Data Platform Pack: a Claude Code Plugin Field Demo
 
+[![plugin-tests](https://github.com/andymadson/data-platform-pack/actions/workflows/test.yml/badge.svg)](https://github.com/andymadson/data-platform-pack/actions/workflows/test.yml)
+
 Your best engineer built great Claude Code workflows. They live on her laptop. The other 200 engineers have 200 slightly different setups, and the platform team has no way to ship a fix to all of them. That's the problem plugins solve, and this repo demos it end to end.
 
 This repository plays the role of a customer's internal plugin marketplace. It contains one plugin (`data-platform-pack`) that bundles four things a data platform team actually standardizes:
