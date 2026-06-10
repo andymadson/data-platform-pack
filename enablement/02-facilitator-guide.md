@@ -61,4 +61,4 @@ Attendees, from their clone: run the harness, install from the local marketplace
 
 **Where this lands in a POC:** week one, fork this repo, replace `warehouse-conventions` and `policy.json` with the customer's real standards, and you've turned a demo into their internal tooling. The artifact survives the meeting.
 
-Close the session by deleting your local plugin and rein
+Close the session by deleting your local plugin and reinstalling it from the marketplace, on screen, in under a minute. Distribution is the product. Worth showing twice.

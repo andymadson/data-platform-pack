@@ -57,4 +57,4 @@ PreToolUse hooks read the tool call as JSON on stdin and answer `allow`, `deny` 
 - **"The model could ignore it."** It can ignore instructions. It can't ignore a process gate. Read `guard.js`; it's 158 lines on purpose.
 - **"Supply chain risk."** Right instinct. Internal marketplace, PR review, version pins, managed-settings allowlists. Treat it like your package registry.
 
-Docs: code.clau
+Docs: code.claude.com/docs/en/plugins and code.claude.com/docs/en/plugin-marketplaces

@@ -25,4 +25,4 @@ Three reasons. First, it sells to two buyers at once: the engineer sees `/sql-re
 
 ## The signal it worked
 
-Within 14 days of the session, the seller runs this demo (or the ship-a-rule beat) in at least one real customer conversation, verified through call recordings or CRM notes. The in-session proxy that predicts it: every attendee authors one policy rule, sees the harness pass, and triggers the block themselves before leav
+Within 14 days of the session, the seller runs this demo (or the ship-a-rule beat) in at least one real customer conversation, verified through call recordings or CRM notes. The in-session proxy that predicts it: every attendee authors one policy rule, sees the harness pass, and triggers the block themselves before leaving the room.

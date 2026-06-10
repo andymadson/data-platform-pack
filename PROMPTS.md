@@ -76,4 +76,4 @@ Make a change the room suggests. Example: block `terraform apply` for agents.
 3. Bump `version` in `plugins/data-platform-pack/.claude-plugin/plugin.json` to `1.0.1` and push.
 4. On any engineer's machine: `/plugin marketplace update platform-tools`, then `claude plugin update data-platform-pack` and restart. The new rule is now policy for everyone.
 
-The punchline writes itself: one PR, one version bump, and every engineer's agent just g
+The punchline writes itself: one PR, one version bump, and every engineer's agent just got safer.
