@@ -1,0 +1,32 @@
+<svg viewBox="0 0 1200 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Plugin anatomy: a marketplace repo connects to a plugin, which connects to an engineer's machine. Two commands install it.">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9" fill="none" stroke="#CC785C" stroke-width="1.6"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1200" height="470" fill="#FAF9F5"/>
+  <!-- marketplace box -->
+  <rect x="20" y="100" width="330" height="170" fill="#F0EEE6" stroke="#191919" stroke-width="1"/>
+  <text x="50" y="150" font-family="Styrene B, Inter, Helvetica Neue, Arial, sans-serif" font-size="24" fill="#191919">marketplace repo</text>
+  <text x="50" y="190" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="16" fill="#191919" opacity="0.75">.claude-plugin/</text>
+  <text x="50" y="214" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="16" fill="#191919" opacity="0.75">marketplace.json</text>
+  <!-- arrow 1 -->
+  <line x1="350" y1="185" x2="430" y2="185" stroke="#CC785C" stroke-width="1.6" marker-end="url(#arr)"/>
+  <!-- plugin box -->
+  <rect x="435" y="75" width="330" height="220" fill="#F0EEE6" stroke="#191919" stroke-width="1"/>
+  <text x="465" y="125" font-family="Styrene B, Inter, Helvetica Neue, Arial, sans-serif" font-size="24" fill="#191919">plugin</text>
+  <text x="465" y="165" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="16" fill="#191919" opacity="0.75">manifest</text>
+  <text x="465" y="192" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="16" fill="#191919" opacity="0.75">skills/</text>
+  <text x="465" y="219" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="16" fill="#191919" opacity="0.75">agents/</text>
+  <text x="465" y="246" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="16" fill="#191919" opacity="0.75">hooks/</text>
+  <!-- arrow 2 -->
+  <line x1="765" y1="185" x2="845" y2="185" stroke="#CC785C" stroke-width="1.6" marker-end="url(#arr)"/>
+  <!-- engineer box -->
+  <rect x="850" y="100" width="330" height="170" fill="#FAF9F5" stroke="#191919" stroke-width="1"/>
+  <text x="880" y="150" font-family="Styrene B, Inter, Helvetica Neue, Arial, sans-serif" font-size="24" fill="#191919">engineer's machine</text>
+  <text x="880" y="190" font-family="Styrene B, Inter, Helvetica Neue, Arial, sans-serif" font-size="16" fill="#191919" opacity="0.75">installed, version-pinned,</text>
+  <text x="880" y="214" font-family="Styrene B, Inter, Helvetica Neue, Arial, sans-serif" font-size="16" fill="#191919" opacity="0.75">namespaced</text>
+  <!-- commands -->
+  <text x="600" y="370" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="19" fill="#191919">/plugin marketplace add owner/repo</text>
+  <text x="600" y="406" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="19" fill="#191919">/plugin install data-platform-pack@platform-tools</text>
+</svg>

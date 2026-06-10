@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+warehouse/
+**/.claude/audit/
+.claude/settings.local.json
+.DS_Store
