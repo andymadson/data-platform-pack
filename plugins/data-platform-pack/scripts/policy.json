@@ -6,6 +6,7 @@
       "id": "no-prod-target",
       "action": "deny",
       "pattern": "--target[=\\s]+prod\\b",
+      "flags": "i",
       "reason": "Agents run against dev only. Prod deploys go through CI. Rerun with --target dev or hand this to a human."
     },
     {
