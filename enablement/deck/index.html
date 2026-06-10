@@ -10,7 +10,7 @@
     --oat: #F0EEE6;
     --slate: #191919;
     --cloth: #CC785C;
-    --kraft: #D4A27F;
+    --kraft: #D4A27F; /* full brand palette; kraft reserved for secondary accents */
     --hairline: rgba(25, 25, 25, 0.16);
     --font-display: "Tiempos Text", Georgia, "Times New Roman", serif;
     --font-body: "Styrene B", Inter, "Helvetica Neue", Arial, sans-serif;
@@ -191,6 +191,7 @@
   @page { size: letter landscape; margin: 0; }
 
   @media print {
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     html, body { height: auto; overflow: visible; background: var(--ivory); }
     .hud { display: none; }
     .slide {
@@ -211,7 +212,7 @@
 
 <!-- Slide 1 -->
 <section class="slide active" aria-label="Slide 1">
-  <hr class="rule">
+  <hr class="rule" aria-hidden="true">
   <h1>Plugins: the enterprise rollout story.</h1>
   <p class="subtitle">Claude Code enablement for Applied AI.</p>
   <p class="footer"><a href="https://github.com/andymadson/data-platform-pack">github.com/andymadson/data-platform-pack</a></p>
@@ -219,7 +220,7 @@
 
 <!-- Slide 2 -->
 <section class="slide" aria-label="Slide 2">
-  <hr class="rule">
+  <hr class="rule" aria-hidden="true">
   <h1 class="wide">200 engineers. 200 copies of a .claude/ folder. Zero versioning.</h1>
   <p class="subtitle">The objection that stalls the deal isn't capability. It's rollout.</p>
 </section>
