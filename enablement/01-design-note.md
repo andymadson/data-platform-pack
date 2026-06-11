@@ -19,6 +19,8 @@ After 30 minutes with this kit, an Applied AI engineer can:
 
 The demo domain is data engineering (an ELT pipeline with a prod target and immutable migrations) because that's where enterprise anxiety about agents is most concrete, and because SQLite plus the Python standard library means zero installs and nothing to break on stage.
 
+The room deck tells the story through a named engineer, Maya. The name is a stand-in: presenters should swap in a real engineer or a real anecdote from the account when they have one, and the arc holds either way. The deck's speaker notes mark every slide where the name appears.
+
 ## Why this is the right field demo
 
 Three reasons. First, it sells to two buyers at once: the engineer sees `/sql-review` catch real findings, and the platform lead sees governance, audit trails, and a one-PR rollout motion. Second, the riskiest moment (asking Claude to drop a prod table) is the safest, because the deny comes from a regex in a hook, not from model behavior. Same input, same block, every single run. Third, beat 4 turns the demo into discovery: the seller asks "what command should agents never run here?" and ships the customer's own rule, live, in about 90 seconds. The demo ends with the customer's policy in the artifact.

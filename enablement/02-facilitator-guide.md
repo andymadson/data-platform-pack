@@ -2,7 +2,7 @@
 
 **Presenter:** an Applied AI Architect, Applied AI Engineer, or Forward Deployed Engineer
 **The room:** the prospect's platform lead and engineers; laptops invited for the hands-on block
-**Format:** Terminal-first. The room deck is enablement/deck/presentation-deck.pptx (14 slides, presenter notes inside); enablement/deck/index.html is the six-slide short-form variant for quick sessions and printing. Slides carry the opening eight minutes, then the terminal. One printed or linked handout (`03-participant-handout.md`).
+**Format:** Terminal-first. The room deck is enablement/deck/presentation-deck.pptx (16 slides, presenter notes inside, full talk track and timings in the notes); enablement/deck/index.html is the six-slide short-form variant for quick sessions and printing. Slides carry the opening eight minutes, then the terminal. One printed or linked handout (`03-participant-handout.md`).
 **Room setup:** Facilitator laptop with the repo cloned, plugin NOT yet installed, `node tests/run_tests.js` already run once today. Attendees with laptops clone the repo before or during minute 8.
 **Send attendees the day before:** the repo link, "install and authenticate Claude Code before the session," and "confirm `node --version` prints 18 or higher." Anyone who shows up without Claude Code pairs with a neighbor during hands-on.
 **Pre-flight (do this the morning of):** fresh clone, run the harness (22 passes), run `cd demo-project && python3 pipelines/run.py all --target dev`, confirm `claude` authenticates, and from `demo-project/` run one warm-up deny (`node ../tests/try.js "python3 pipelines/run.py check --target prod"`) so today's audit file already holds a denial. Five minutes, and the demo cannot surprise you.
@@ -19,7 +19,7 @@ Plugins are Claude Code's answer. A plugin bundles skills, agents, and hooks int
 
 Field note for the presenter: don't detour into subagents, hooks, or skills as standalone features; plugins are where those pieces stop being a laptop setup and become something their enterprise can adopt.
 
-## 3:00 to 8:00 | Anatomy (room-deck slides 6 to 8, plus the handout diagram, 5 minutes)
+## 3:00 to 8:00 | Anatomy (room-deck slides 6 to 9, plus the handout diagram, 5 minutes)
 
 Walk the diagram on the handout. Three layers, keep it tight:
 
@@ -41,7 +41,7 @@ Prompts are verbatim in `PROMPTS.md`. Narrate decisions, not keystrokes.
 
 **Beat 4, Ship (17:00 to 20:00).** Ask the room: "What's one command an agent should never run here?" Take the first answer (terraform apply is the usual one), add the rule to `policy.json`, prove it with `node tests/try.js "terraform apply"` (instant deny, zero tokens), run the harness to show nothing regressed, bump the manifest to 1.0.1, and narrate the update motion (`/plugin marketplace update platform-tools`, plugin update, restart). Line to land: "One PR, one version bump, and every engineer's agent just got safer. That's the rollout motion your platform lead has been asking for."
 
-If anything drifts: the model improvising is fine (the guard catches patterns, not intentions), and the harness is your fallback. `node tests/try.js "<any command>"` shows the deny without burning a token. No network? The local marketplace add (`../`) doesn't need one. If the model itself is down, walk beats 1 and 2 from the handout anatomy and the 4-beat slide (room deck slide 11), and run beats 3 and 4 entirely through try.js and the harness.
+If anything drifts: the model improvising is fine (the guard catches patterns, not intentions), and the harness is your fallback. `node tests/try.js "<any command>"` shows the deny without burning a token. No network? The local marketplace add (`../`) doesn't need one. If the model itself is down, walk beats 1 and 2 from the handout anatomy and the beat slides (room deck slides 10 to 13), and run beats 3 and 4 entirely through try.js and the harness.
 
 ## 20:00 to 26:00 | Hands-on
 
