@@ -13,9 +13,11 @@ This repository plays the role of a customer's internal plugin marketplace. It c
 
 It also contains `demo-project/`, a runnable orders ELT pipeline (SQLite, Python standard library, zero installs) with review findings seeded on purpose. Real shape, no toy `hello world`.
 
+This repository is the working demo artifact only. The seller-facing design note, facilitator materials, handouts, deck, validation record, and Loom are submitted separately in the assignment bundle.
+
 ## First run in under 5 minutes
 
-Prerequisites: [Claude Code](https://code.claude.com/docs) installed and authenticated, Node 18+ (Claude Code already requires it), Python 3, git. Commands below are shown for macOS, Linux, and WSL. On Windows, run the demo inside WSL or Git Bash (the hook commands use shell variable substitution); the harness and `try.js` also run fine in PowerShell, and the pipeline runs there with `python` in place of `python3`.
+Prerequisites: [Claude Code](https://code.claude.com/docs) installed and authenticated, Node 18+ (Claude Code already requires it), Python 3, git. The live validation used Claude Code 2.1.170; update Claude Code first if plugin validation reports unrecognized metadata fields. Commands below are shown for macOS, Linux, and WSL. On Windows, run the demo inside WSL or Git Bash (the hook commands use shell variable substitution); the harness and `try.js` also run fine in PowerShell, and the pipeline runs there with `python` in place of `python3`.
 
 ```bash
 git clone https://github.com/andymadson/data-platform-pack && cd data-platform-pack
@@ -103,20 +105,5 @@ This is policy distribution with deterministic enforcement and an audit trail. I
 - **Windows:** the hook commands use `${CLAUDE_PLUGIN_ROOT}` shell substitution; run Claude Code under WSL or Git Bash.
 - **Check any command against policy:** `node tests/try.js "<command>"` or `node tests/try.js --write <file> "<content>"`. Exit codes: 0 allow, 1 ask, 2 deny.
 - **Audit log location:** `<project>/.claude/audit/agent-audit-YYYY-MM-DD.jsonl` (gitignored).
-
-Validation record: enablement/06-validation-record.md (commands and real output from a live Claude Code session).
-
-## The enablement kit
-
-This repo doubles as the seller-facing enablement package. Everything a technical seller needs to teach and run this lives in `enablement/`:
-
-- `01-design-note.md` (objectives, scoping, why this demo, the success signal)
-- `02-facilitator-guide.md` (the 30-minute session: timing, talk track, objections)
-- `03-participant-handout.md` (the one page that goes in front of the room)
-- `04-loom-script.md` (the sub-5-minute walkthrough script)
-- `05-how-this-was-built.md` (how AI built the kit and how a human verified it)
-- `06-validation-record.md` (commands and real output from a live Claude Code session)
-- `deck/index.html` (six framing slides, Anthropic visual style; print to PDF from the browser)
-- `deck/presentation-deck.pptx` (the 16-slide room deck with presenter notes; imports cleanly into Google Slides. The six framing slides above are the short-form variant.)
 
 Docs: [Plugins](https://code.claude.com/docs/en/plugins), [Plugin marketplaces](https://code.claude.com/docs/en/plugin-marketplaces)
